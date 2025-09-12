@@ -1248,7 +1248,7 @@ GameObject:
   - component: {fileID: 7690028770226714414}
   - component: {fileID: 7690028770226714415}
   - component: {fileID: 7690028770226714412}
-  - component: {fileID: 5100326734090306632}
+  - component: {fileID: 8448452169498811282}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -1413,7 +1413,7 @@ MonoBehaviour:
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
---- !u!114 &5100326734090306632
+--- !u!114 &8448452169498811282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1422,12 +1422,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7690028770226714410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81badb86fcb87f742aa615f161fe5b1d, type: 3}
+  m_Script: {fileID: 11500000, guid: fbda984e2ef41ed4e882244f6b59c630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tmp: {fileID: 7690028770226714412}
-  toastDebug: 1
-  logDebug: 1
 --- !u!1 &7690028770342564882
 GameObject:
   m_ObjectHideFlags: 0
