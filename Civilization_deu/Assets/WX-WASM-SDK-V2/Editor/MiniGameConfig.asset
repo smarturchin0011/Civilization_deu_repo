@@ -19,8 +19,8 @@ MonoBehaviour:
     assetLoadType: 1
     compressDataPackage: 0
     VideoUrl: 
-    relativeDST: D:/LocalProject/Civilization_deu_repo/Civilization_deu/weixinminigamedemo/civ_v0.1.1_inputtest
-    DST: D:/LocalProject/Civilization_deu_repo/Civilization_deu/weixinminigamedemo/civ_v0.1.1_inputtest
+    relativeDST: D:/LocalProject/Civilization_deu_repo/Civilization_deu/weixinminigamedemo/civ_v0.1.2_v2
+    DST: D:/LocalProject/Civilization_deu_repo/Civilization_deu/weixinminigamedemo/civ_v0.1.2_v2
     StreamCDN: 
     bundleHashLength: 32
     bundlePathIdentifier: StreamingAssets;
@@ -59,7 +59,7 @@ MonoBehaviour:
     ProfilingMemory: 0
     CleanBuild: 0
     CustomNodePath: 
-    autoAdaptScreen: 0
+    autoAdaptScreen: 1
     showMonitorSuggestModal: 1
     enableProfileStats: 0
     enableRenderAnalysis: 0

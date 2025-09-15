@@ -1,4 +1,5 @@
-// @ts-nocheck
+
+import './plugins/screen-adapter';// @ts-nocheck
 import './weapp-adapter';
 import './events';
 import './texture-config';
@@ -9,11 +10,11 @@ import checkVersion from './check-version';
 import { launchEventType, scaleMode } from './plugin-config';
 import { preloadWxCommonFont } from './unity-sdk/font/index';
 const managerConfig = {
-    DATA_FILE_MD5: '0fc02e8c4365e893',
+    DATA_FILE_MD5: 'b7c09f6a6743e569',
     CODE_FILE_MD5: 'cc244652673953d2',
     GAME_NAME: 'webgl',
     APPID: 'wx20f80816e65e6bf5',
-    DATA_FILE_SIZE: '8747398',
+    DATA_FILE_SIZE: '8928657',
     OPT_DATA_FILE_SIZE: '$OPT_DATA_FILE_SIZE',
     DATA_CDN: '',
     // 资源包是否作为小游戏分包加载

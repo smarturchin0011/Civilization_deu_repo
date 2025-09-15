@@ -32,5 +32,6 @@
       ]
     }
   },
-  "workers"                    : "workers"
+  "workers"                    : "workers",
+  "displayMode"                : "desktop"
 }
