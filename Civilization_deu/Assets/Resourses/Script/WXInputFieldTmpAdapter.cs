@@ -64,7 +64,7 @@ public class WXInputFieldTmpAdapter : MonoBehaviour, IPointerClickHandler, IPoin
         WX.ShowKeyboard(new ShowKeyboardOption()
         {
             defaultValue = _inputField.text,//传入当前文本作为默认值
-            maxLength = 20, // 最大输入长度
+            maxLength = 100, // 最大输入长度
             confirmType = "go" // 确认按钮类型
         });
 
