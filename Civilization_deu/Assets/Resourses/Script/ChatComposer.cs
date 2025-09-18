@@ -5,19 +5,29 @@ using UnityEngine.Events;
 
 public class ChatComposer : MonoBehaviour
 {
+    [Header("调用api脚本")] 
+    [SerializeField] private ApiPost _apiPost;
+    
     [Header("Refs")]
     [SerializeField] TMP_InputField inputField;
     [SerializeField] Button sendButton;
-    [SerializeField] ScrollRect scrollRect;          // 指向这个 Scroll View
+    [SerializeField] ScrollRect scrollRect;          // 指向的 Scroll View
     [SerializeField] RectTransform content;          // 指向 Scroll View/Viewport/Content
-    [SerializeField] GameObject userBoxPrefab;       // 你的 userBox 预制体（里含 TMP_Text）
+    [SerializeField] GameObject userBoxPrefab; // userBox 预制体（里含 TMP_Text）
+    [SerializeField] GameObject speakerBoxPrefab; // speakerBox 预制体（里含 TMP_Text）
 
     [Header("Hooks (预留给 LLM)")]
-    public UnityEvent<string> onUserMessage;         // 发送后把原文抛出去；Inspector 可绑调用
+    public UnityEvent<string> onUserMessage; // 发送后把原文 invok 出去
 
     void Awake()
     {
         if (sendButton) sendButton.onClick.AddListener(Send);
+        
+        _apiPost = GetComponent<ApiPost>();
+        if (_apiPost!=null)
+        {
+            _apiPost.OnUIUpdate += CreateSpeakerBubble;
+        }
     }
 
     void OnDestroy()
@@ -44,7 +54,7 @@ public class ChatComposer : MonoBehaviour
 
     public void SendTest(string content)
     {
-        // 1) 生成一条用户气泡
+        // 1) 生成一条测试用的用户气泡
         CreateUserBubble(content);
     }
 
@@ -57,7 +67,19 @@ public class ChatComposer : MonoBehaviour
         var tmp = go.GetComponentInChildren<TMP_Text>(true);
         if (tmp) tmp.text = text;
 
-        // 若 userBox 上有你之前的 ChatBubbleFitter，会自动自适应尺寸
+        // 强制刷新一次布局再滚到底
+        Canvas.ForceUpdateCanvases();
+        ScrollToBottom();
+    }
+    
+    void CreateSpeakerBubble(string text)
+    {
+        if (!speakerBoxPrefab || !content) return;
+        
+        var go = Instantiate(speakerBoxPrefab, content);
+        // 找到这条消息里的 TMP_Text
+        var tmp = go.GetComponentInChildren<TMP_Text>(true);
+        if (tmp) tmp.text = text;
 
         // 强制刷新一次布局再滚到底
         Canvas.ForceUpdateCanvases();

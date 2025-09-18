@@ -6,8 +6,7 @@ public class SliderFunc : MonoBehaviour
 {
     [SerializeField] public RectTransform slider;
     [SerializeField] public float speed = 0.3f;
-
-    private int _current = 0;
+    
     private Coroutine moveCoroutine;
     // Start is called before the first frame update
     void Awake()

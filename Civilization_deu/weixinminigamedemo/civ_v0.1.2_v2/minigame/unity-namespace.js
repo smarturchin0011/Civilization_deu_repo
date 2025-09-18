@@ -63,7 +63,7 @@ const unityNamespace = {
 // 最佳实践检测配置
 unityNamespace.monitorConfig = {
     // 显示优化建议弹框
-    showSuggestModal: true,
+    showSuggestModal: false,
     // 是否开启检测（只影响开发版/体验版，线上版本不会检测）
     enableMonitor: true,
     // 帧率低于此值的帧会被记录，用于分析长耗时帧，做了限帧的游戏应该适当调低

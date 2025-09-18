@@ -30,7 +30,7 @@ MonoBehaviour:
     HideAfterCallMain: 1
     preloadFiles: 
     Orientation: 0
-    bgImageSrc: Assets/WX-WASM-SDK-V2/Runtime/wechat-default/images/background.jpg
+    bgImageSrc: Assets/Resourses/Art/UI-V2/BG_img_v2.png
     dataFileSubPrefix: 
     maxStorage: 200
     defaultReleaseSize: 31457280
@@ -60,7 +60,7 @@ MonoBehaviour:
     CleanBuild: 0
     CustomNodePath: 
     autoAdaptScreen: 1
-    showMonitorSuggestModal: 1
+    showMonitorSuggestModal: 0
     enableProfileStats: 0
     enableRenderAnalysis: 0
     enablePerfAnalysis: 0
