@@ -19,14 +19,32 @@ public class UIManager : MonoBehaviour
     {
         
         if (index < 0 || index >= panels.Length) return;
-        for (int i = 0; i < panels.Length; i++) if (panels[i]) panels[i].SetActive(i == index);
+        
+        for (int i = 0; i < panels.Length; i++)
+        {
+            if (panels[i])
+            {
+                panels[i].SetActive(i == index);
+            }
+        }
         _current = index;
+        
         if (tabSelectedIcons != null && tabSelectedIcons.Length > 0)
+        {
             for (int i = 0; i < tabSelectedIcons.Length; i++)
+            {
                 if (tabSelectedIcons[i]) tabSelectedIcons[i].SetActive(i == index);
+            }
+        }
+
         if (pageLogos != null && pageLogos.Length > 0)
+        {
             for (int i = 0; i < pageLogos.Length; i++)
+            {
                 if (pageLogos[i]) pageLogos[i].SetActive(i == index);
-        _switch.OnSwitch();
+            }
+                
+        }
+            
     }
 }

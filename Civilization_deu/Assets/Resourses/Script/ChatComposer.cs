@@ -5,34 +5,47 @@ using UnityEngine.Events;
 
 public class ChatComposer : MonoBehaviour
 {
-    [Header("调用api脚本")] 
+    [Header("调用api脚本")]
     [SerializeField] private ApiPost _apiPost;
-    
+    [SerializeField] private TencentApiManager _tencentApiManager;
+
     [Header("Refs")]
     [SerializeField] TMP_InputField inputField;
     [SerializeField] Button sendButton;
     [SerializeField] ScrollRect scrollRect;          // 指向的 Scroll View
     [SerializeField] RectTransform content;          // 指向 Scroll View/Viewport/Content
-    [SerializeField] GameObject userBoxPrefab; // userBox 预制体（里含 TMP_Text）
-    [SerializeField] GameObject speakerBoxPrefab; // speakerBox 预制体（里含 TMP_Text）
+    [SerializeField] GameObject userBoxPrefab;       // userBox 预制体（含 TMP_Text）
+    [SerializeField] GameObject speakerBoxPrefab;    // speakerBox 预制体（含 TMP_Text）
 
     [Header("Hooks (预留给 LLM)")]
-    public UnityEvent<string> onUserMessage; // 发送后把原文 invok 出去
+    public UnityEvent<string> onUserMessage;         // 发送后把原文 invok 出去
+
+    // 本轮“说书人”流式绑定的文本引用
+    TMP_Text activeAssistantText = null;
 
     void Awake()
     {
         if (sendButton) sendButton.onClick.AddListener(Send);
-        
+
         _apiPost = GetComponent<ApiPost>();
-        if (_apiPost!=null)
-        {
-            _apiPost.OnUIUpdate += CreateSpeakerBubble;
-        }
+        _tencentApiManager = GetComponent<TencentApiManager>();
+        
+        // 现在：只把“完成”当作清理/收尾事件，不创建新气泡
+        if (_apiPost != null)
+            _apiPost.OnUIUpdate += OnAssistantFinished;
+
+        // 订阅流式增量：把分片直接追加到当前说书人气泡
+        if (_tencentApiManager != null)
+            _tencentApiManager.OnStreamDelta.AddListener(AppendAssistantDelta);
     }
 
     void OnDestroy()
     {
         if (sendButton) sendButton.onClick.RemoveListener(Send);
+        if (_tencentApiManager != null)
+            _tencentApiManager.OnStreamDelta.RemoveListener(AppendAssistantDelta);
+        if (_apiPost != null)
+            _apiPost.OnUIUpdate -= OnAssistantFinished;
     }
 
     public void Send()
@@ -44,63 +57,73 @@ public class ChatComposer : MonoBehaviour
         // 1) 生成一条用户气泡
         CreateUserBubble(text);
 
-        // 2) 清空输入框 & 失焦（可选）
+        // 2) 立刻创建“说书人气泡”（空文本），作为本轮流的承接者
+        CreateEmptySpeakerBubble();
+
+        // 3) 清空输入框 & 失焦（可选）
         inputField.text = string.Empty;
         inputField.DeactivateInputField();
 
-        // 3) 抛给外部（LLM接口可在 Inspector 绑定到此事件）
+        // 4) 抛给 ApiPost → TencentApiManager.SendTextMessage（外部链路不变）
         onUserMessage?.Invoke(text);
     }
 
-    public void SendTest(string content)
+    public void SendTest(string contentText)
     {
-        // 1) 生成一条测试用的用户气泡
-        CreateUserBubble(content);
+        CreateUserBubble(contentText);
+        CreateEmptySpeakerBubble();
     }
 
     void CreateUserBubble(string text)
     {
         if (!userBoxPrefab || !content) return;
-
         var go = Instantiate(userBoxPrefab, content);
-        // 找到这条消息里的 TMP_Text（你也可以给 userBox 写个脚本来 SetText）
         var tmp = go.GetComponentInChildren<TMP_Text>(true);
         if (tmp) tmp.text = text;
-
-        // 强制刷新一次布局再滚到底
         Canvas.ForceUpdateCanvases();
         ScrollToBottom();
     }
-    
-    void CreateSpeakerBubble(string text)
+
+    // 发送后只创建一次空的说书人气泡
+    void CreateEmptySpeakerBubble()
     {
         if (!speakerBoxPrefab || !content) return;
-        
         var go = Instantiate(speakerBoxPrefab, content);
-        // 找到这条消息里的 TMP_Text
-        var tmp = go.GetComponentInChildren<TMP_Text>(true);
-        if (tmp) tmp.text = text;
-
-        // 强制刷新一次布局再滚到底
+        activeAssistantText = go.GetComponentInChildren<TMP_Text>(true);
+        if (activeAssistantText) activeAssistantText.text = string.Empty;
         Canvas.ForceUpdateCanvases();
         ScrollToBottom();
+    }
+
+    // 流式增量写入当前气泡
+    void AppendAssistantDelta(string piece)
+    {
+        if (activeAssistantText == null) return;
+        activeAssistantText.text += piece;
+        Canvas.ForceUpdateCanvases();
+        ScrollToBottom();
+    }
+
+    // 流式结束：不再创建新气泡；可选择性校正文本，这里直接结束并清引用
+    void OnAssistantFinished(string fullText)
+    {
+        // 最终校正
+        if (activeAssistantText != null) activeAssistantText.text = fullText;
+
+        activeAssistantText = null; // 本轮结束，等待下一次用户输入
     }
 
     void ScrollToBottom()
     {
         if (!scrollRect) return;
-        // 先刷新，再把滚动条拉到底
         Canvas.ForceUpdateCanvases();
-        scrollRect.verticalNormalizedPosition = 0f;  // 0=底部, 1=顶部
+        scrollRect.verticalNormalizedPosition = 0f;
         Canvas.ForceUpdateCanvases();
     }
 
-    // 可选：支持按下 Enter 发送（移动端也适用外接键盘）
     void Update()
     {
         if (inputField && inputField.isFocused && Input.GetKeyDown(KeyCode.Return))
-        {
             Send();
-        }
     }
 }
