@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 7521195807294206785}
   - component: {fileID: 8457274978536835595}
   m_Layer: 5
-  m_Name: explore_button
+  m_Name: mine_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,7 +206,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 449, y: 35}
-  m_SizeDelta: {x: 292, y: 284}
+  m_SizeDelta: {x: 296, y: 247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6919491187028205623
 CanvasRenderer:
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ba0b492f7435ad846b67347127fd0df3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d931d3f49a7cfe641af24ef12e9fa06b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -276,8 +276,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300000, guid: 227ebca97488db24db748aa260eca5ea, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 227ebca97488db24db748aa260eca5ea, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: a57db79f21a51df44bc490f5621a18dd, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: a57db79f21a51df44bc490f5621a18dd, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -353,7 +353,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -444, y: 35}
-  m_SizeDelta: {x: 292, y: 284}
+  m_SizeDelta: {x: 296, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6919491187658248844
 CanvasRenderer:
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1071516838c1f90478fd1c3e1a7a8099, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b125e64748840a4a92a182b8fcf7d3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -423,8 +423,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300000, guid: 858630a0bb7c10b44a20aa097ef24659, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 858630a0bb7c10b44a20aa097ef24659, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 4ad3a7def3ab01e469bcd88188880d80, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 4ad3a7def3ab01e469bcd88188880d80, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -500,7 +500,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -157, y: 35}
-  m_SizeDelta: {x: 292, y: 284}
+  m_SizeDelta: {x: 296, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6919491187613950415
 CanvasRenderer:
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 162ebc84ea5b66d488d40ab3ad71a1e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b02524c99a91eb45912239963e87ca5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -570,8 +570,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300000, guid: 4800f048ad24e9141b89b9ec18609deb, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 4800f048ad24e9141b89b9ec18609deb, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: dee5958efea6ebb479a69961a76407ae, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: dee5958efea6ebb479a69961a76407ae, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 7521195805944694673}
   - component: {fileID: 8457274977738866395}
   m_Layer: 5
-  m_Name: workshop_button
+  m_Name: Timeline_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -647,7 +647,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 142, y: 35}
-  m_SizeDelta: {x: 292, y: 284}
+  m_SizeDelta: {x: 296, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6919491185695479015
 CanvasRenderer:
@@ -677,7 +677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9bdef5762babf574bbd4c4c6d8ddb7f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63195c8210133ff4ebaf1d10bead017c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -717,8 +717,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300000, guid: c37ddc9f5b9743f469b249a79532748e, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: c37ddc9f5b9743f469b249a79532748e, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 6c73b86c2aff51248adfb0a57e4f7d64, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 6c73b86c2aff51248adfb0a57e4f7d64, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -833,7 +833,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 292, y: 284}
+  m_SizeDelta: {x: 296, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4142869513072017353
 CanvasRenderer:
@@ -863,7 +863,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c37ddc9f5b9743f469b249a79532748e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c73b86c2aff51248adfb0a57e4f7d64, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -909,7 +909,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 292, y: 284}
+  m_SizeDelta: {x: 296, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4142869512587070177
 CanvasRenderer:
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4800f048ad24e9141b89b9ec18609deb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dee5958efea6ebb479a69961a76407ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -985,7 +985,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 292, y: 284}
+  m_SizeDelta: {x: 296, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4142869512618801570
 CanvasRenderer:
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 858630a0bb7c10b44a20aa097ef24659, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ad3a7def3ab01e469bcd88188880d80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1061,7 +1061,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 292, y: 284}
+  m_SizeDelta: {x: 296, y: 247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4142869512274021145
 CanvasRenderer:
@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 227ebca97488db24db748aa260eca5ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a57db79f21a51df44bc490f5621a18dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u63A2\u7D22"
+  m_text: "\u6211\u7684"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62df839649de2ca4a904a41457097a18, type: 2}
   m_sharedMaterial: {fileID: 3640488526477049349, guid: 62df839649de2ca4a904a41457097a18, type: 2}
@@ -1572,7 +1572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5DE5\u574A"
+  m_text: "\u65F6\u95F4\u7EBF"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62df839649de2ca4a904a41457097a18, type: 2}
   m_sharedMaterial: {fileID: 3640488526477049349, guid: 62df839649de2ca4a904a41457097a18, type: 2}
